@@ -19,6 +19,7 @@ function Form() {
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(J)</InputAdornment>
@@ -31,6 +32,7 @@ function Form() {
           </Grid>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(Q)</InputAdornment>
@@ -43,6 +45,7 @@ function Form() {
           </Grid>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(V)</InputAdornment>
@@ -55,6 +58,7 @@ function Form() {
           </Grid>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(f)</InputAdornment>
@@ -67,6 +71,7 @@ function Form() {
           </Grid>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(mu)</InputAdornment>
@@ -79,6 +84,7 @@ function Form() {
           </Grid>
           <Grid item xs={6} sm={6}>
             <TextField
+              fullWidth
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">(N)</InputAdornment>
