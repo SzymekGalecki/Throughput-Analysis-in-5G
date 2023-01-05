@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import React from "react";
 import {
   BarChart,
@@ -10,15 +11,17 @@ import {
 } from "recharts";
 
 function Chart({ results }) {
+  const matches = useMediaQuery("(min-width:600px)");
+
   return (
     <BarChart
-      width={460}
+      width={matches ? 460 : 280}
       height={300}
       data={results}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 0,
+        left: 0,
         bottom: 5,
       }}
     >

@@ -1,12 +1,6 @@
 import React from "react";
 import Chart from "./Chart";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-} from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 function Results({ results }) {
   return (
     <Card>
@@ -19,10 +13,9 @@ function Results({ results }) {
           Mbps
         </Typography>
       </CardContent>
-      <Chart results={results} />
-      <CardActions>
-        <Button>Save results</Button>
-      </CardActions>
+      <Box sx={{ mb: 4 }}>
+        <Chart results={results} />
+      </Box>
     </Card>
   );
 }
