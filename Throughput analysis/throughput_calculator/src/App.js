@@ -1,7 +1,8 @@
 import "./App.css";
+import AppBarMenu from "./components/Calculator/AppBarMenu";
 
 function App() {
-  return <div className="App">test</div>;
+  return <AppBarMenu />;
 }
 
 export default App;
