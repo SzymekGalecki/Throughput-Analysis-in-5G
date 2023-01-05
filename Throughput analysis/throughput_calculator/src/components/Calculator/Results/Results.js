@@ -15,12 +15,12 @@ import {
   Legend,
 } from "recharts";
 import { data } from "./data";
-function Results() {
+function Results({ results }) {
   return (
     <Card>
       <CardContent>
         <Typography>Throughput in Mbps:</Typography>
-        <Typography variant="h5">2000.037312</Typography>
+        <Typography variant="h5">{results ? results : ""}</Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           Mbps
         </Typography>
