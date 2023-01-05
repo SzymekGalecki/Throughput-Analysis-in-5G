@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form/Form";
+import Results from "./Results/Results";
 import { Grid, Paper, Box, Typography, useMediaQuery } from "@mui/material";
 import { MathComponent } from "mathjax-react";
 
@@ -27,8 +28,8 @@ function Main() {
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
-          <Paper elevation={5}>
-            <Box sx={{ p: 4 }}></Box>
+          <Paper elevation={4}>
+            <Results />
           </Paper>
         </Grid>
       </Grid>
