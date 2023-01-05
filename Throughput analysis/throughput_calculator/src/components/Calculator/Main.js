@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./Form/Form";
 import Results from "./Results/Results";
 import { Grid, Paper, Box, Typography, useMediaQuery } from "@mui/material";
@@ -6,7 +6,31 @@ import { MathComponent } from "mathjax-react";
 
 function Main() {
   const matches = useMediaQuery("(min-width:600px)");
+  const [inputValues, setInputValues] = useState({
+    componentCarriers: "",
+    numberOfLayers: "",
+    modulationOrder: "",
+    scalingFactor: "",
+    numberOfAllocatedPRBs: "",
+    mu: "",
+    overHead: "",
+  });
+  const [results, setResults] = useState();
 
+  const calculateThroughput = () => {
+    let Rmax = 0.92578125;
+    let symbolDuration = Math.pow(10, -3) / (14 * Math.pow(2, inputValues.mu));
+    const result =
+      Math.pow(10, -6) *
+      (inputValues.numberOfLayers *
+        inputValues.modulationOrder *
+        inputValues.scalingFactor *
+        Rmax *
+        ((inputValues.numberOfAllocatedPRBs * 12) / symbolDuration)) *
+      (1 - inputValues.overHead);
+    return setResults(result);
+  };
+  console.log(results);
   return (
     <Box sx={{ p: 4 }}>
       <Grid container spacing={2}>
@@ -23,13 +47,17 @@ function Main() {
                   />
                 </Box>
               )}
-              <Form />
+              <Form
+                inputValues={inputValues}
+                setInputValues={setInputValues}
+                calculateThroughput={calculateThroughput}
+              />
             </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
           <Paper elevation={4}>
-            <Results />
+            <Results results={results} />
           </Paper>
         </Grid>
       </Grid>
